@@ -6,7 +6,7 @@ const DiaryList = ({ diary, deleteDiary, editDiary, filter, startDate }) => {
     diary.sort((a, b) => {
       return new Date(a.createdDate) - new Date(b.createdDate);
     });
-  } else if (filter === "descending") {
+  } else {
     diary.sort((a, b) => {
       return new Date(b.createdDate) - new Date(a.createdDate);
     });
