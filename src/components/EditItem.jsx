@@ -1,19 +1,19 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 
-const EditItem = ({editTutorial,item}) => {
+const EditItem = ({editDiary,item}) => {
   
-  const { id, title: newTitle, description }= item
+  const { diaryID, title: newTitle, text }= item
   const [title, setTitle] = useState(newTitle);
-  const [desc, setDesc] = useState(description);
+  const [desc, setDesc] = useState(text);
 
   useEffect(() => {
     setTitle(newTitle);
-    setDesc(description);
-  }, [newTitle, description]);
+    setDesc(text);
+  }, [newTitle, text]);
  
   const handleEdit = (e) => {
     e.preventDefault();
-    editTutorial(id, title, desc);
+    editDiary(diaryID, title, desc);
     setTitle('');
     setDesc('');
   }

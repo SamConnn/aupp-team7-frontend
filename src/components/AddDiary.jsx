@@ -1,12 +1,12 @@
 import { useState } from "react";
 
-const AddTutorial = ({addTutorial}) => {
+const AddDiary = ({addTutorial}) => {
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addTutorial({ title: title, description: desc })
+    addTutorial({ title: title, text: desc })
     setTitle("");
     setDesc("");
 
@@ -14,7 +14,7 @@ const AddTutorial = ({addTutorial}) => {
 
   return (
     <div className="container text-center mt-4">
-      <h1 className="display-4 text-info">Add Your Tutorial</h1>
+      <h1 className="display-4 text-info">Add Your Diary</h1>
       <form onSubmit={handleSubmit}>
         <div className="mb-3 fs-5">
           <label htmlFor="title" className="form-label">
@@ -50,4 +50,4 @@ const AddTutorial = ({addTutorial}) => {
   );
 };
 
-export default AddTutorial;
+export default AddDiary;
